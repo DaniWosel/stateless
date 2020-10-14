@@ -1,5 +1,24 @@
 import 'package:flutter/material.dart';
+
 void main() => runApp(MyApp());
+
+class HorribleText extends StatelessWidget{
+  String cadena;
+  HorribleText(String c){
+    this.cadena=c;
+  }
+  @override
+  Widget build(BuildContext context){
+    return Text(cadena,
+        style: TextStyle(
+            fontSize: 50,
+            backgroundColor: Colors.amber,
+            color: Colors.blue
+        )
+    );
+  }
+}
+
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -10,7 +29,15 @@ class MyApp extends StatelessWidget {
           title: Text('Flutter layout demo'),
         ),
         body: Center(
-          child: Text('Hello World'),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              HorribleText("Una cadena!!"),
+              HorribleText("Hello World"),
+              Text('Whats up')
+            ]
+          )
         ),
       ),
     );
